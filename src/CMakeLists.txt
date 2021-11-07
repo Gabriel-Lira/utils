@@ -1,21 +1,39 @@
+# Cmake required
 cmake_minimum_required(VERSION 3.21)
 
-add_executable(
-    ${PROJECT_NAME}
+# Lib source
+set(LIB_NAME ${PROJECT_NAME}_LIB)
 
-    main.c
+add_library(
+    ${LIB_NAME} STATIC
+
+    stream/input_stream.c
 )
 
 target_compile_features(
-    ${PROJECT_NAME}
+    ${LIB_NAME}
 
     PUBLIC
     c_std_11
 )
 
 target_include_directories(
-    ${PROJECT_NAME}
+    ${LIB_NAME}
 
     PUBLIC
     ../include
+)
+
+# Executable source
+add_executable(
+    ${PROJECT_NAME}
+
+    main.c
+)
+
+target_link_libraries(
+    ${PROJECT_NAME}
+
+    PUBLIC
+    ${LIB_NAME}
 )

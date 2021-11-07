@@ -1,5 +1,7 @@
+# Cmake required
 cmake_minimum_required(VERSION 3.21)
 
+# Project
 project(
     GAL_Utils
     
@@ -8,4 +10,5 @@ project(
     LANGUAGES C
 )
 
+# Source
 add_subdirectory(src)
