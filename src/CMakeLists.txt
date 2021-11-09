@@ -7,7 +7,7 @@ set(LIB_NAME ${PROJECT_NAME}_LIB)
 add_library(
     ${LIB_NAME} STATIC
 
-    stream/input_stream.c
+    stream/input_stream_buffer.c
 )
 
 target_compile_features(
