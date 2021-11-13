@@ -8,6 +8,7 @@ add_library(
     ${LIB_NAME} STATIC
 
     stream/input_stream_buffer.c
+    stream/input_stream_memory.c
 )
 
 target_compile_features(

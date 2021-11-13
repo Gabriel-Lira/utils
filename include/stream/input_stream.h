@@ -2,6 +2,7 @@
 #define INPUT_STREAM
 
 #include "stream/input_stream_buffer.h"
+#include "stream/input_stream_memory.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -10,7 +11,8 @@ extern "C"
 
 // clang-format off
 #define is_read(IS, VAR) _Generic((IS), \
-    InputStreamBuffer: is_buffer_read(IS, VAR))
+    InputStreamBuffer: is_buffer_read(IS, VAR), \
+    InputStreamMemory: is_memory_read(IS, VAR))
 // clang-format off
 
 #ifdef __cplusplus
