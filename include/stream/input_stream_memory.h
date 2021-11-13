@@ -18,19 +18,19 @@ extern "C"
     (&IS)
 // clang-format off
 
-typedef bool (*MemoryReadCallback)(uint8_t *dest_ptr, uint32_t size, uint32_t offset);
+typedef bool (*MemoryReadCallback)(uint8_t *dest_ptr, size_t size, size_t offset);
 
 typedef struct InputStreamMemory
 {
-    uint16_t offset;
-    const uint32_t initial_offset;
-    const uint32_t size;
+    size_t offset;
+    const size_t initial_offset;
+    const size_t size;
     const MemoryReadCallback read_callback;
 } InputStreamMemory;
 
-InputStreamMemory is_memory_make(MemoryReadCallback memory_read_callback, uint32_t memory_initial_offset, uint16_t size);
+InputStreamMemory is_memory_make(MemoryReadCallback memory_read_callback, size_t memory_initial_offset, size_t size);
 
-uint16_t is_memory_available(InputStreamMemory *is);
+size_t is_memory_available(InputStreamMemory *is);
 
 uint8_t is_memory_read_u8(InputStreamMemory *is);
 uint16_t is_memory_read_u16(InputStreamMemory *is);

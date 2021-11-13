@@ -1,7 +1,7 @@
 #include "stream/input_stream_memory.h"
 
 InputStreamMemory is_memory_make(MemoryReadCallback memory_read_callback,
-                                 uint32_t memory_initial_offset, uint16_t size)
+                                 size_t memory_initial_offset, size_t size)
 {
     return (InputStreamMemory){.read_callback = memory_read_callback,
                                .size = size,
@@ -9,7 +9,7 @@ InputStreamMemory is_memory_make(MemoryReadCallback memory_read_callback,
                                .offset = 0};
 }
 
-uint16_t is_memory_available(InputStreamMemory *is)
+size_t is_memory_available(InputStreamMemory *is)
 {
     return (is->size - is->offset);
 }

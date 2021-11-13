@@ -1,12 +1,12 @@
 #include "stream/input_stream_buffer.h"
 
-InputStreamBuffer is_buffer_make(const uint8_t *buffer_ptr, uint16_t size)
+InputStreamBuffer is_buffer_make(const uint8_t *buffer_ptr, size_t size)
 {
     return (InputStreamBuffer){
         .buffer_ptr = buffer_ptr, .size = size, .offset = 0};
 }
 
-uint16_t is_buffer_available(InputStreamBuffer *is)
+size_t is_buffer_available(InputStreamBuffer *is)
 {
     return (is->size - is->offset);
 }

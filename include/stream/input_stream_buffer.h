@@ -19,14 +19,14 @@ extern "C"
 
 typedef struct InputStreamBuffer
 {
-    uint16_t offset;
-    const uint16_t size;
+    size_t offset;
+    const size_t size;
     const uint8_t *const buffer_ptr;
 } InputStreamBuffer;
 
-InputStreamBuffer is_buffer_make(const uint8_t*buffer_ptr, uint16_t size);
+InputStreamBuffer is_buffer_make(const uint8_t*buffer_ptr, size_t size);
 
-uint16_t is_buffer_available(InputStreamBuffer *is);
+size_t is_buffer_available(InputStreamBuffer *is);
 
 uint8_t is_buffer_read_u8(InputStreamBuffer *is);
 uint16_t is_buffer_read_u16(InputStreamBuffer *is);
