@@ -10,12 +10,7 @@ extern "C"
 #endif
 
 // clang-format off
-#define is_buffer_read(IS, VAR) VAR = _Generic((VAR), \
-    uint8_t: is_buffer_read_u8, \
-    uint16_t: is_buffer_read_u16, \
-    uint32_t: is_buffer_read_u32, \
-    uint64_t: is_buffer_read_u64) \
-    (&IS)
+#define is_buffer_read(IS, VAR) is_type_read(IS, VAR, is_buffer_read_u8)
 // clang-format off
 
 typedef struct InputStreamBuffer
@@ -26,10 +21,7 @@ typedef struct InputStreamBuffer
 
 InputStreamBuffer is_buffer_make(const uint8_t*buffer_ptr, size_t size);
 
-uint8_t is_buffer_read_u8(InputStreamBuffer *is);
-uint16_t is_buffer_read_u16(InputStreamBuffer *is);
-uint32_t is_buffer_read_u32(InputStreamBuffer *is);
-uint64_t is_buffer_read_u64(InputStreamBuffer *is);
+uint8_t is_buffer_read_u8(InputStreamType *is);
 
 #ifdef __cplusplus
 }
