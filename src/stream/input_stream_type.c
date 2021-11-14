@@ -5,7 +5,7 @@ size_t is_type_available(InputStreamType *is)
     return (is->size - is->offset);
 }
 
-size_t is_type_advance(InputStreamType *is, size_t advance_size)
+void is_type_advance(InputStreamType *is, size_t advance_size)
 {
     if ((is->offset + advance_size) <= is->size)
     {

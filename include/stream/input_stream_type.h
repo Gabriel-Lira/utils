@@ -17,7 +17,7 @@ typedef struct InputStreamType
 } InputStreamType;
 
 size_t is_type_available(InputStreamType *is);
-size_t is_type_advance(InputStreamType *is, size_t advance_size);
+void is_type_advance(InputStreamType *is, size_t advance_size);
 
 #ifdef __cplusplus
 }
