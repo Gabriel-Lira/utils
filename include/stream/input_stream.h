@@ -16,9 +16,11 @@ extern "C"
 // clang-format off
 
 // clang-format off
-#define is_available(IS, VAR) _Generic((IS), \
-    InputStreamBuffer: is_buffer_available, \
-    InputStreamMemory: is_memory_available)(IS)
+#define is_available(IS) is_type_available(IS.stream)
+// clang-format off
+
+// clang-format off
+#define is_advance(IS, ADVANCE_SIZE) is_type_advance(IS.stream, ADVANCE_SIZE)
 // clang-format off
 
 #ifdef __cplusplus

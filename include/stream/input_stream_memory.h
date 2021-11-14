@@ -1,6 +1,7 @@
 #ifndef INPUT_STREAM_MEMORY
 #define INPUT_STREAM_MEMORY
 
+#include "stream/input_stream_type.h"
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -22,15 +23,12 @@ typedef bool (*MemoryReadCallback)(uint8_t *dest_ptr, size_t size, size_t offset
 
 typedef struct InputStreamMemory
 {
-    size_t offset;
+    InputStreamType stream;
     const size_t initial_offset;
-    const size_t size;
     const MemoryReadCallback read_callback;
 } InputStreamMemory;
 
 InputStreamMemory is_memory_make(MemoryReadCallback memory_read_callback, size_t memory_initial_offset, size_t size);
-
-size_t is_memory_available(InputStreamMemory *is);
 
 uint8_t is_memory_read_u8(InputStreamMemory *is);
 uint16_t is_memory_read_u16(InputStreamMemory *is);

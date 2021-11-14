@@ -1,6 +1,7 @@
 #ifndef INPUT_STREAM_BUFFER
 #define INPUT_STREAM_BUFFER
 
+#include "stream/input_stream_type.h"
 #include <stdint.h>
 
 #ifdef __cplusplus
@@ -19,14 +20,11 @@ extern "C"
 
 typedef struct InputStreamBuffer
 {
-    size_t offset;
-    const size_t size;
+    InputStreamType stream;
     const uint8_t *const buffer_ptr;
 } InputStreamBuffer;
 
 InputStreamBuffer is_buffer_make(const uint8_t*buffer_ptr, size_t size);
-
-size_t is_buffer_available(InputStreamBuffer *is);
 
 uint8_t is_buffer_read_u8(InputStreamBuffer *is);
 uint16_t is_buffer_read_u16(InputStreamBuffer *is);

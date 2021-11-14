@@ -3,22 +3,18 @@
 InputStreamBuffer is_buffer_make(const uint8_t *buffer_ptr, size_t size)
 {
     return (InputStreamBuffer){
-        .buffer_ptr = buffer_ptr, .size = size, .offset = 0};
-}
-
-size_t is_buffer_available(InputStreamBuffer *is)
-{
-    return (is->size - is->offset);
+        .buffer_ptr = buffer_ptr,
+        .stream = (InputStreamType){.size = size, .offset = 0}};
 }
 
 uint8_t is_buffer_read_u8(InputStreamBuffer *is)
 {
-    if (is_buffer_available(is) < sizeof(uint8_t))
+    if (is_type_available(&is->stream) < sizeof(uint8_t))
     {
         return 0;
     }
 
-    return is->buffer_ptr[is->offset++];
+    return is->buffer_ptr[is->stream.offset++];
 }
 
 uint16_t is_buffer_read_u16(InputStreamBuffer *is)
