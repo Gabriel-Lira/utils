@@ -1,4 +1,4 @@
-#include "stream/input_stream_buffer.h"
+#include "stream/input/input_stream_buffer.h"
 
 InputStreamBuffer is_buffer_make(const uint8_t *buffer_ptr, size_t size)
 {

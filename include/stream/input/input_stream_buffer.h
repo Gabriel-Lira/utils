@@ -1,7 +1,7 @@
 #ifndef INPUT_STREAM_BUFFER
 #define INPUT_STREAM_BUFFER
 
-#include "stream/input_stream_type.h"
+#include "stream/input/input_stream_type.h"
 #include <stdint.h>
 
 #ifdef __cplusplus

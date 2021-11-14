@@ -1,7 +1,7 @@
 #ifndef INPUT_STREAM_MEMORY
 #define INPUT_STREAM_MEMORY
 
-#include "stream/input_stream_type.h"
+#include "stream/input/input_stream_type.h"
 #include <stdbool.h>
 #include <stdint.h>
 

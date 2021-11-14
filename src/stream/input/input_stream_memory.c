@@ -1,4 +1,4 @@
-#include "stream/input_stream_memory.h"
+#include "stream/input/input_stream_memory.h"
 
 InputStreamMemory is_memory_make(MemoryReadCallback memory_read_callback,
                                  size_t memory_initial_offset, size_t size)

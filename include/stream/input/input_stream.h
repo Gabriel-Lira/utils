@@ -1,8 +1,8 @@
 #ifndef INPUT_STREAM
 #define INPUT_STREAM
 
-#include "stream/input_stream_buffer.h"
-#include "stream/input_stream_memory.h"
+#include "stream/input/input_stream_buffer.h"
+#include "stream/input/input_stream_memory.h"
 
 #ifdef __cplusplus
 extern "C"

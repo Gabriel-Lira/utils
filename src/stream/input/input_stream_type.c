@@ -1,4 +1,4 @@
-#include "stream/input_stream_type.h"
+#include "stream/input/input_stream_type.h"
 
 size_t is_type_available(InputStreamType *is)
 {
