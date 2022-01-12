@@ -11,7 +11,7 @@ extern "C"
 #endif
 
 // clang-format off
-#define is_memory_read(IS, VAR) is_type_read(IS, VAR, is_memory_read_u8)
+#define is_memory_read(IS, VAR) is_type_read(IS.stream, VAR, is_memory_read_u8)
 // clang-format off
 
 typedef bool (*MemoryReadCallback)(uint8_t *dest_ptr, size_t size, size_t offset);

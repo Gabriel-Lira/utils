@@ -10,7 +10,7 @@ extern "C"
 #endif
 
 // clang-format off
-#define is_buffer_read(IS, VAR) is_type_read(IS, VAR, is_buffer_read_u8)
+#define is_buffer_read(IS, VAR) is_type_read(IS.stream, VAR, is_buffer_read_u8)
 // clang-format off
 
 typedef struct InputStreamBuffer
