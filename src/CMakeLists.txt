@@ -10,6 +10,9 @@ add_library(
     stream/input/input_stream_buffer.c
     stream/input/input_stream_memory.c
     stream/input/input_stream_type.c
+
+    stream/output/output_stream_buffer.c
+    stream/output/output_stream_type.c
 )
 
 target_compile_features(
