@@ -12,6 +12,7 @@ add_library(
     stream/input/input_stream_type.c
 
     stream/output/output_stream_buffer.c
+    stream/output/output_stream_memory.c
     stream/output/output_stream_type.c
 )
 
