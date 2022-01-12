@@ -14,6 +14,8 @@ add_library(
     stream/output/output_stream_buffer.c
     stream/output/output_stream_memory.c
     stream/output/output_stream_type.c
+    
+    stream/stream_type.c
 )
 
 target_compile_features(

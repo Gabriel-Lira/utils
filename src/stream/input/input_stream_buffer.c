@@ -2,12 +2,12 @@
 
 InputStreamBuffer is_buffer_make(const uint8_t *buffer_ptr, size_t size)
 {
-    return (InputStreamBuffer){
-        .buffer_ptr = buffer_ptr,
-        .stream = (InputStreamType){.size = size, .offset = 0}};
+    return (InputStreamBuffer){.buffer_ptr = buffer_ptr,
+                               .stream =
+                                   (StreamType){.size = size, .offset = 0}};
 }
 
-uint8_t is_buffer_read_u8(InputStreamType *is)
+uint8_t is_buffer_read_u8(StreamType *is)
 {
     InputStreamBuffer *is_buffer = (InputStreamBuffer *)is;
 

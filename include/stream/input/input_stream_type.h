@@ -1,6 +1,7 @@
 #ifndef INPUT_STREAM_TYPE
 #define INPUT_STREAM_TYPE
 
+#include "stream/stream_type.h"
 #include <stdint.h>
 
 #ifdef __cplusplus
@@ -17,21 +18,12 @@ extern "C"
     (&IS, CALLBACK)
 // clang-format off
 
-typedef struct InputStreamType
-{
-    size_t offset;
-    const size_t size;
-} InputStreamType;
+typedef uint8_t (*IsTypeReadU8Callback)(StreamType *is);
 
-typedef uint8_t (*IsTypeReadU8Callback)(InputStreamType *is);
-
-size_t is_type_available(InputStreamType *is);
-void is_type_advance(InputStreamType *is, size_t advance_size);
-
-uint8_t is_type_read_u8(InputStreamType *is, IsTypeReadU8Callback read_u8_callback);
-uint16_t is_type_read_u16(InputStreamType *is, IsTypeReadU8Callback read_u8_callback);
-uint32_t is_type_read_u32(InputStreamType *is, IsTypeReadU8Callback read_u8_callback);
-uint64_t is_type_read_u64(InputStreamType *is, IsTypeReadU8Callback read_u8_callback);
+uint8_t is_type_read_u8(StreamType *is, IsTypeReadU8Callback read_u8_callback);
+uint16_t is_type_read_u16(StreamType *is, IsTypeReadU8Callback read_u8_callback);
+uint32_t is_type_read_u32(StreamType *is, IsTypeReadU8Callback read_u8_callback);
+uint64_t is_type_read_u64(StreamType *is, IsTypeReadU8Callback read_u8_callback);
 
 #ifdef __cplusplus
 }

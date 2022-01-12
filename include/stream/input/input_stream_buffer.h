@@ -15,13 +15,13 @@ extern "C"
 
 typedef struct InputStreamBuffer
 {
-    InputStreamType stream;
+    StreamType stream;
     const uint8_t *const buffer_ptr;
 } InputStreamBuffer;
 
 InputStreamBuffer is_buffer_make(const uint8_t*buffer_ptr, size_t size);
 
-uint8_t is_buffer_read_u8(InputStreamType *is);
+uint8_t is_buffer_read_u8(StreamType *is);
 
 #ifdef __cplusplus
 }

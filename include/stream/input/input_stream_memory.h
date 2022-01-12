@@ -18,14 +18,14 @@ typedef bool (*MemoryReadCallback)(uint8_t *dest_ptr, size_t size, size_t offset
 
 typedef struct InputStreamMemory
 {
-    InputStreamType stream;
+    StreamType stream;
     const size_t initial_offset;
     const MemoryReadCallback read_callback;
 } InputStreamMemory;
 
 InputStreamMemory is_memory_make(MemoryReadCallback memory_read_callback, size_t memory_initial_offset, size_t size);
 
-uint8_t is_memory_read_u8(InputStreamType *is);
+uint8_t is_memory_read_u8(StreamType *is);
 
 #ifdef __cplusplus
 }

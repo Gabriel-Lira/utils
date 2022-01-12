@@ -2,12 +2,12 @@
 
 OutputStreamBuffer os_buffer_make(uint8_t *const buffer_ptr, size_t size)
 {
-    return (OutputStreamBuffer){
-        .buffer_ptr = buffer_ptr,
-        .stream = (OutputStreamType){.size = size, .offset = 0}};
+    return (OutputStreamBuffer){.buffer_ptr = buffer_ptr,
+                                .stream =
+                                    (StreamType){.size = size, .offset = 0}};
 }
 
-void os_buffer_write_u8(OutputStreamType *os, uint8_t src_var)
+void os_buffer_write_u8(StreamType *os, uint8_t src_var)
 {
     OutputStreamBuffer *os_buffer = (OutputStreamBuffer *)os;
 

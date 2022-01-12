@@ -3,13 +3,13 @@
 InputStreamMemory is_memory_make(MemoryReadCallback memory_read_callback,
                                  size_t memory_initial_offset, size_t size)
 {
-    return (InputStreamMemory){
-        .read_callback = memory_read_callback,
-        .initial_offset = memory_initial_offset,
-        .stream = (InputStreamType){.size = size, .offset = 0}};
+    return (InputStreamMemory){.read_callback = memory_read_callback,
+                               .initial_offset = memory_initial_offset,
+                               .stream =
+                                   (StreamType){.size = size, .offset = 0}};
 }
 
-uint8_t is_memory_read_u8(InputStreamType *is)
+uint8_t is_memory_read_u8(StreamType *is)
 {
     InputStreamMemory *is_buffer = (InputStreamMemory *)is;
     const size_t read_offset =

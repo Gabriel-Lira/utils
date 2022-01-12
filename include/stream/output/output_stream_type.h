@@ -1,6 +1,7 @@
 #ifndef OUTPUT_STREAM_TYPE
 #define OUTPUT_STREAM_TYPE
 
+#include "stream/stream_type.h"
 #include <stdint.h>
 
 #ifdef __cplusplus
@@ -17,21 +18,12 @@ extern "C"
     (&OS, VAR, CALLBACK)
 // clang-format off
 
-typedef struct OutputStreamType
-{
-    size_t offset;
-    const size_t size;
-} OutputStreamType;
+typedef void (*OsTypeWriteU8Callback)(StreamType *os, uint8_t src_var);
 
-typedef void (*OsTypeWriteU8Callback)(OutputStreamType *os, uint8_t src_var);
-
-size_t os_type_available(OutputStreamType *os);
-void os_type_advance(OutputStreamType *os, size_t advance_size);
-
-void os_type_write_u8(OutputStreamType *os, uint8_t src_var, OsTypeWriteU8Callback write_u8_callback);
-void os_type_write_u16(OutputStreamType *os, uint16_t src_var, OsTypeWriteU8Callback write_u8_callback);
-void os_type_write_u32(OutputStreamType *os, uint32_t src_var, OsTypeWriteU8Callback write_u8_callback);
-void os_type_write_u64(OutputStreamType *os, uint64_t src_var, OsTypeWriteU8Callback write_u8_callback);
+void os_type_write_u8(StreamType *os, uint8_t src_var, OsTypeWriteU8Callback write_u8_callback);
+void os_type_write_u16(StreamType *os, uint16_t src_var, OsTypeWriteU8Callback write_u8_callback);
+void os_type_write_u32(StreamType *os, uint32_t src_var, OsTypeWriteU8Callback write_u8_callback);
+void os_type_write_u64(StreamType *os, uint64_t src_var, OsTypeWriteU8Callback write_u8_callback);
 
 #ifdef __cplusplus
 }
