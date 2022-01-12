@@ -13,13 +13,9 @@ extern "C"
 #define is_read(IS, VAR) _Generic((IS), \
     InputStreamBuffer: is_buffer_read(IS, VAR), \
     InputStreamMemory: is_memory_read(IS, VAR))
-// clang-format off
 
-// clang-format off
 #define is_available(IS) is_type_available(&IS.stream)
-// clang-format off
 
-// clang-format off
 #define is_advance(IS, ADVANCE_SIZE) is_type_advance(&IS.stream, ADVANCE_SIZE)
 // clang-format off
 
