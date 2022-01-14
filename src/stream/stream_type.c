@@ -1,5 +1,10 @@
 #include "stream/stream_type.h"
 
+StreamType stream_type_make(size_t size)
+{
+    return (StreamType){.size = size, .offset = 0};
+}
+
 size_t stream_type_available(StreamType *stream)
 {
     return (stream->size - stream->offset);

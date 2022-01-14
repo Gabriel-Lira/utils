@@ -5,8 +5,7 @@ InputStreamMemory is_memory_make(MemoryReadCallback memory_read_callback,
 {
     return (InputStreamMemory){.read_callback = memory_read_callback,
                                .initial_offset = memory_initial_offset,
-                               .stream =
-                                   (StreamType){.size = size, .offset = 0}};
+                               .stream = stream_type_make(size)};
 }
 
 uint8_t is_memory_read_u8(StreamType *is)

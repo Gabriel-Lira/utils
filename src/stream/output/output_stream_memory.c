@@ -5,8 +5,7 @@ OutputStreamMemory os_memory_make(MemoryWriteCallback memory_write_callback,
 {
     return (OutputStreamMemory){.write_callback = memory_write_callback,
                                 .initial_offset = memory_initial_offset,
-                                .stream =
-                                    (StreamType){.size = size, .offset = 0}};
+                                .stream = stream_type_make(size)};
 }
 
 void os_memory_write_u8(StreamType *os, uint8_t src_var)

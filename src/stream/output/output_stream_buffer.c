@@ -3,8 +3,7 @@
 OutputStreamBuffer os_buffer_make(uint8_t *const buffer_ptr, size_t size)
 {
     return (OutputStreamBuffer){.buffer_ptr = buffer_ptr,
-                                .stream =
-                                    (StreamType){.size = size, .offset = 0}};
+                                .stream = stream_type_make(size)};
 }
 
 void os_buffer_write_u8(StreamType *os, uint8_t src_var)
