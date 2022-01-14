@@ -3,6 +3,7 @@
 
 #include "stream/input/input_stream_buffer.h"
 #include "stream/input/input_stream_memory.h"
+#include "stream/stream_type.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -14,9 +15,9 @@ extern "C"
     InputStreamBuffer: is_buffer_read(IS, VAR), \
     InputStreamMemory: is_memory_read(IS, VAR))
 
-#define is_available(IS) is_type_available(&IS.stream)
+#define is_available(IS) stream_type_available(&IS.stream)
 
-#define is_advance(IS, ADVANCE_SIZE) is_type_advance(&IS.stream, ADVANCE_SIZE)
+#define is_advance(IS, ADVANCE_SIZE) stream_type_advance(&IS.stream, ADVANCE_SIZE)
 // clang-format off
 
 #ifdef __cplusplus

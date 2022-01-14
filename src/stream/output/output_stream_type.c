@@ -3,7 +3,7 @@
 void os_type_write_u8(StreamType *os, uint8_t src_var,
                       OsTypeWriteU8Callback write_u8_callback)
 {
-    if (os_type_available(os) < sizeof(uint8_t))
+    if (stream_type_available(os) < sizeof(uint8_t))
     {
         return;
     }

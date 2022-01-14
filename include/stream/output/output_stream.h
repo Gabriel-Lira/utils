@@ -3,6 +3,7 @@
 
 #include "stream/output/output_stream_buffer.h"
 #include "stream/output/output_stream_memory.h"
+#include "stream/stream_type.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -14,9 +15,9 @@ extern "C"
     OutputStreamBuffer: os_buffer_write(OS, VAR), \
     OutputStreamMemory: os_memory_write(OS, VAR))
 
-#define os_available(OS) os_type_available(&OS.stream)
+#define os_available(OS) stream_type_available(&OS.stream)
 
-#define os_advance(OS, ADVANCE_SIZE) os_type_advance(&OS.stream, ADVANCE_SIZE)
+#define os_advance(OS, ADVANCE_SIZE) stream_type_advance(&OS.stream, ADVANCE_SIZE)
 // clang-format off
 
 #ifdef __cplusplus

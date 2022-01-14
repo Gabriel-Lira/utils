@@ -2,7 +2,7 @@
 
 uint8_t is_type_read_u8(StreamType *is, IsTypeReadU8Callback read_u8_callback)
 {
-    if (is_type_available(is) < sizeof(uint8_t))
+    if (stream_type_available(is) < sizeof(uint8_t))
     {
         return 0;
     }
