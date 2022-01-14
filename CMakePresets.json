@@ -1,0 +1,65 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "project_default",
+            "displayName": "Project Default Settings",
+            "description": "The project default settings for all other presets",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}"
+        },
+        {
+            "name": "debug",
+            "displayName": "Debug Default Settings",
+            "description": "The debug default settings",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release",
+            "displayName": "Release Default Settings",
+            "description": "The release default settings",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "win_default",
+            "displayName": "Windows Default Settings",
+            "description": "The windows default settings",
+            "hidden": true,
+            "inherits": "project_default"
+        },
+        {
+            "name": "win_dbg",
+            "displayName": "Windows Debug Default Settings",
+            "description": "The windows debug default settings",
+            "inherits": [
+                "win_default",
+                "debug"
+            ]
+        },
+        {
+            "name": "win_rel",
+            "displayName": "Windows Default Settings",
+            "description": "The windows default settings",
+            "inherits": [
+                "win_default",
+                "release"
+            ]
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "win_dbg",
+            "displayName": "Windows Debug Default Build",
+            "description": "The windows debug default build",
+            "configurePreset": "win_dbg"
+        }
+    ],
+    "testPresets": []
+}
