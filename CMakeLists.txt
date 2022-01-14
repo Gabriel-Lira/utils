@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 3.21)
 
 # Project
 project(
-    GAL_Utils
+    GALI_Utils
     
     VERSION 0.1
-    DESCRIPTION "A general utils lib"
+    DESCRIPTION "A general utils lib made by Gabriel Al. Lira (GALI)"
     LANGUAGES C
 )
 
