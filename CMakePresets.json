@@ -2,7 +2,7 @@
     "version": 3,
     "configurePresets": [
         {
-            "name": "project_default",
+            "name": "project-default",
             "displayName": "Project Default Settings",
             "description": "The project default settings for all other presets",
             "hidden": true,
@@ -28,37 +28,74 @@
             }
         },
         {
-            "name": "win_default",
+            "name": "win-default",
             "displayName": "Windows Default Settings",
             "description": "The windows default settings",
             "hidden": true,
-            "inherits": "project_default"
+            "inherits": "project-default"
         },
         {
-            "name": "win_dbg",
+            "name": "win-dbg",
             "displayName": "Windows Debug Default Settings",
             "description": "The windows debug default settings",
             "inherits": [
-                "win_default",
+                "win-default",
                 "debug"
             ]
         },
         {
-            "name": "win_rel",
-            "displayName": "Windows Default Settings",
-            "description": "The windows default settings",
+            "name": "win-rel",
+            "displayName": "Windows Release Default Settings",
+            "description": "The windows release default settings",
             "inherits": [
-                "win_default",
+                "win-default",
                 "release"
             ]
         }
     ],
     "buildPresets": [
         {
-            "name": "win_dbg",
+            "name": "test-run",
+            "displayName": "Run Tests Default Build",
+            "description": "The default build to run tests",
+            "hidden": true,
+            "targets": "GALI_utils_test_run"
+        },
+        {
+            "name": "win-dbg",
             "displayName": "Windows Debug Default Build",
             "description": "The windows debug default build",
-            "configurePreset": "win_dbg"
+            "configurePreset": "win-dbg"
+        },
+        {
+            "name": "win-dbg-test",
+            "displayName": "Windows Debug Default Build",
+            "description": "The windows debug default build",
+            "configurePreset": "win-dbg",
+            "inherits": [
+                "win-dbg",
+                "test-run"
+            ]
+        },
+        {
+            "name": "win-dbg-clean",
+            "displayName": "Windows Debug Default Build Clean",
+            "description": "Clear and do the windows debug default build",
+            "inherits": "win-dbg",
+            "cleanFirst": true
+        },
+        {
+            "name": "win-rel",
+            "displayName": "Windows Release Default Build",
+            "description": "The windows release default build",
+            "configurePreset": "win-rel"
+        },
+        {
+            "name": "win-rel-clean",
+            "displayName": "Windows Release Default Build Clean",
+            "description": "Clear and do the windows release default build",
+            "inherits": "win-rel",
+            "cleanFirst": true
         }
     ],
     "testPresets": []
