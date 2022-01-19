@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.21)
 set(LIB_NAME ${PROJECT_NAME}_LIB)
 
 add_library(
-    ${LIB_NAME} STATIC
+    ${LIB_NAME} OBJECT
 
     stream/input/input_stream_buffer.c
     stream/input/input_stream_memory.c
@@ -17,6 +17,8 @@ add_library(
     
     stream/stream_type.c
 )
+
+add_library(GALI::utils ALIAS ${LIB_NAME})
 
 target_compile_features(
     ${LIB_NAME}
@@ -30,6 +32,13 @@ target_include_directories(
 
     PUBLIC
     ../include
+)
+
+target_compile_options(
+    ${LIB_NAME}
+
+    PRIVATE
+    $<$<C_COMPILER_ID:MSVC>:/W4 /Wall>
 )
 
 # Executable source
