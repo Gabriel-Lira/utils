@@ -26,7 +26,7 @@ target_compile_features(
     ${TEST_NAME}
 
     PUBLIC
-    cxx_std_20
+    cxx_std_23
 )
 
 target_link_libraries(
