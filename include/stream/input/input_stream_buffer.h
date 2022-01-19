@@ -11,6 +11,8 @@ extern "C"
 
 // clang-format off
 #define is_buffer_read(IS, VAR) is_type_read(IS.stream, VAR, is_buffer_read_u8)
+
+#define is_buffer_make(BUFFER_PTR, SIZE) {.stream = stream_type_make(SIZE), .buffer_ptr = BUFFER_PTR}
 // clang-format off
 
 typedef struct InputStreamBuffer
@@ -18,8 +20,6 @@ typedef struct InputStreamBuffer
     StreamType stream;
     const uint8_t *const buffer_ptr;
 } InputStreamBuffer;
-
-InputStreamBuffer is_buffer_make(const uint8_t*buffer_ptr, size_t size);
 
 uint8_t is_buffer_read_u8(StreamType *is);
 

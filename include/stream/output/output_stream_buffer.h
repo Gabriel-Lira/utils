@@ -11,6 +11,8 @@ extern "C"
 
 // clang-format off
 #define os_buffer_write(OS, VAR) os_type_write(OS.stream, VAR, os_buffer_write_u8)
+
+#define os_buffer_make(BUFFER_PTR, SIZE) {.stream = stream_type_make(SIZE), .buffer_ptr = BUFFER_PTR}
 // clang-format off
 
 typedef struct OutputStreamBuffer
@@ -18,8 +20,6 @@ typedef struct OutputStreamBuffer
     StreamType stream;
     uint8_t *const buffer_ptr;
 } OutputStreamBuffer;
-
-OutputStreamBuffer os_buffer_make(uint8_t*const buffer_ptr, size_t size);
 
 void os_buffer_write_u8(StreamType *os, uint8_t src_var);
 
