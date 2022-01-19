@@ -54,3 +54,9 @@ target_link_libraries(
     PUBLIC
     ${LIB_NAME}
 )
+
+# Run Executable Command
+add_custom_target(
+    ${PROJECT_NAME}_run 
+    COMMAND "$<TARGET_FILE:${PROJECT_NAME}>"
+)

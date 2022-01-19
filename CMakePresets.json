@@ -58,6 +58,13 @@
     ],
     "buildPresets": [
         {
+            "name": "run",
+            "displayName": "Run Default Build",
+            "description": "The default build to run executable",
+            "hidden": true,
+            "targets": "GALI_utils_run"
+        },
+        {
             "name": "test-run",
             "displayName": "Run Tests Default Build",
             "description": "The default build to run tests",
@@ -71,21 +78,29 @@
             "configurePreset": "win-dbg"
         },
         {
+            "name": "win-dbg-clean",
+            "displayName": "Windows Debug Default Build Clean",
+            "description": "Clear and do the windows debug default build",
+            "inherits": "win-dbg",
+            "cleanFirst": true
+        },
+        {
             "name": "win-dbg-test",
-            "displayName": "Windows Debug Default Build",
-            "description": "The windows debug default build",
-            "configurePreset": "win-dbg",
+            "displayName": "Windows Debug Test Build",
+            "description": "The windows debug default test build",
             "inherits": [
                 "win-dbg",
                 "test-run"
             ]
         },
         {
-            "name": "win-dbg-clean",
-            "displayName": "Windows Debug Default Build Clean",
-            "description": "Clear and do the windows debug default build",
-            "inherits": "win-dbg",
-            "cleanFirst": true
+            "name": "win-dbg-run",
+            "displayName": "Windows Debug Run Build",
+            "description": "The windows debug default run build",
+            "inherits": [
+                "win-dbg",
+                "run"
+            ]
         },
         {
             "name": "win-rel",
@@ -99,6 +114,24 @@
             "description": "Clear and do the windows release default build",
             "inherits": "win-rel",
             "cleanFirst": true
+        },
+        {
+            "name": "win-rel-test",
+            "displayName": "Windows Release Test Build",
+            "description": "The windows release default test build",
+            "inherits": [
+                "win-rel",
+                "test-run"
+            ]
+        },
+        {
+            "name": "win-rel-run",
+            "displayName": "Windows Release Run Build",
+            "description": "The windows release default run build",
+            "inherits": [
+                "win-rel",
+                "run"
+            ]
         }
     ],
     "testPresets": []
