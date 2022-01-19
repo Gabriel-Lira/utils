@@ -5,11 +5,23 @@ size_t stream_type_available(StreamType *stream)
     return (stream->size - stream->offset);
 }
 
-void stream_type_advance(StreamType *stream, size_t advance_size)
+void stream_type_shift_left(StreamType *stream, size_t shift_size)
 {
-    if ((stream->offset + advance_size) <= stream->size)
+    if (stream->offset >= shift_size)
     {
-        stream->offset += advance_size;
+        stream->offset -= shift_size;
+    }
+    else
+    {
+        stream->offset = 0;
+    }
+}
+
+void stream_type_shift_right(StreamType *stream, size_t shift_size)
+{
+    if ((stream->offset + shift_size) <= stream->size)
+    {
+        stream->offset += shift_size;
     }
     else
     {

@@ -18,7 +18,9 @@ typedef struct StreamType
 } StreamType;
 
 size_t stream_type_available(StreamType *stream);
-void stream_type_advance(StreamType *stream, size_t advance_size);
+
+void stream_type_shift_left(StreamType *stream, size_t shift_size);
+void stream_type_shift_right(StreamType *stream, size_t shift_size);
 
 #ifdef __cplusplus
 }

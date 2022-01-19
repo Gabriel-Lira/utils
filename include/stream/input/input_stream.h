@@ -17,7 +17,8 @@ extern "C"
 
 #define is_available(IS) stream_type_available(&IS.stream)
 
-#define is_advance(IS, ADVANCE_SIZE) stream_type_advance(&IS.stream, ADVANCE_SIZE)
+#define is_shift_ledt(IS, SHIFT_SIZE) stream_type_shift_left(&IS.stream, SHIFT_SIZE)
+#define is_shift_right(IS, SHIFT_SIZE) stream_type_shift_right(&IS.stream, SHIFT_SIZE)
 // clang-format off
 
 #ifdef __cplusplus
