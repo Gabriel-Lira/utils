@@ -11,15 +11,8 @@ add_executable(
 
     src/utils_test.cpp
 
-    src/stream/stream_type.cpp
+    src/stream/stream_type_test.cpp
     # src/stream/input/input_stream_type_test.cpp
-)
-
-target_compile_features(
-    ${TEST_NAME}
-
-    PUBLIC
-    cxx_std_20
 )
 
 target_include_directories(
@@ -27,6 +20,13 @@ target_include_directories(
 
     PUBLIC
     ./include
+)
+
+target_compile_features(
+    ${TEST_NAME}
+
+    PUBLIC
+    cxx_std_20
 )
 
 target_link_libraries(
