@@ -12,7 +12,7 @@ add_executable(
     src/utils_test.cpp
 
     src/stream/stream_type_test.cpp
-    # src/stream/input/input_stream_type_test.cpp
+    src/stream/input/input_stream_type_test.cpp
 )
 
 target_include_directories(
