@@ -60,3 +60,10 @@ add_custom_target(
     ${PROJECT_NAME}_run 
     COMMAND "$<TARGET_FILE:${PROJECT_NAME}>"
 )
+
+# Static Analysis
+## Cppcheck
+add_custom_target(
+    ${PROJECT_NAME}_cppcheck 
+    COMMAND cppcheck --project="${CMAKE_BINARY_DIR}/compile_commands.json" -i "${CMAKE_SOURCE_DIR}/test" -I "${CMAKE_SOURCE_DIR}/include" -q --force --cppcheck-build-dir="${CMAKE_SOURCE_DIR}/tools/cppcheck/build"  --enable=missingInclude,information,portability,performance,style,warning
+)
