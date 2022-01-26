@@ -65,5 +65,5 @@ add_custom_target(
 ## Cppcheck
 add_custom_target(
     ${PROJECT_NAME}_cppcheck 
-    COMMAND cppcheck --project="${CMAKE_BINARY_DIR}/compile_commands.json" -i "${CMAKE_SOURCE_DIR}/test" -I "${CMAKE_SOURCE_DIR}/include" -q --force --cppcheck-build-dir="${CMAKE_SOURCE_DIR}/tools/cppcheck/build"  --enable=missingInclude,information,portability,performance,style,warning
+    COMMAND cppcheck --project="${CMAKE_BINARY_DIR}/compile_commands.json" -i "${CMAKE_SOURCE_DIR}/test" -I "${CMAKE_SOURCE_DIR}/include" -q --force --addon=cert --addon=y2038 --addon=threadsafety --cppcheck-build-dir="${CMAKE_SOURCE_DIR}/tools/cppcheck/build"  --enable=missingInclude,information,portability,performance,style,warning
 )
